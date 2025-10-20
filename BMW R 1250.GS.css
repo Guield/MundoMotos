@@ -1,0 +1,224 @@
+/* estilos.css - versión en rojo y negro con animación de entrada */
+:root {
+  --bg: #0a0a0a;
+  --card: #111;
+  --accent: #c70039;
+  --text: #f5f5f5;
+  --muted: #9ca3af;
+  --maxw: 1100px;
+  --pad: 18px;
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Animación general */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplica la animación a todo el cuerpo */
+body {
+  margin: 0;
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  animation: fadeUp 1s ease-out both;
+}
+
+/* Encabezado */
+.site-header {
+  background: linear-gradient(90deg, #c70039 0%, #000 100%);
+  color: #fff;
+  padding: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(255, 0, 0, 0.6);
+}
+
+.hero-text .sub {
+  margin: 6px 0 0;
+  color: #ffccd5;
+  font-weight: 400;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: var(--maxw);
+  margin: 30px auto;
+  padding: 0 20px 60px;
+}
+
+/* Tarjetas */
+.card {
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: var(--pad);
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.15);
+  animation: fadeUp 1.2s ease-out both;
+}
+
+.card:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(even) {
+  animation-delay: 0.6s;
+}
+
+/* Títulos */
+.card h2 {
+  margin-top: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(199, 0, 57, 0.4);
+  padding-bottom: 8px;
+}
+
+/* Texto */
+p, li {
+  color: var(--text);
+}
+
+strong {
+  color: #ff4155;
+}
+
+/* Grid de especificaciones */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.spec-grid div {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  color: var(--text);
+}
+
+/* Galería de imágenes */
+.image-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.image-row figure {
+  width: calc(50% - 7px);
+  margin: 0;
+}
+
+.image-row img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #c70039;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-row img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.image-row figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: center;
+}
+
+/* Imagen ancha */
+.wide img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #c70039;
+  transition: transform 0.4s ease;
+}
+.wide img:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen lateral */
+.side img {
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+  float: right;
+  margin-left: 12px;
+  border-radius: 8px;
+  border: 2px solid #c70039;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+}
+
+/* Listas */
+.card ul, .card ol {
+  margin: 12px 0 0 20px;
+  color: var(--text);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  padding: 20px 0 40px;
+  border-top: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .hero-img { display: none; }
+  .image-row figure { width: 100%; }
+  .side img { float: none; width: 100%; height: 220px; margin: 12px 0; }
+}

@@ -1,0 +1,310 @@
+/* --- Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1558979101-7649514781d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #1e1e1e; /* Color de respaldo para el fondo */
+    color: #f5f5f5; /* Color de texto general para contraste con el fondo */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header y Nav (si los usas en esta página) --- */
+header {
+    background-color: #e50914;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5em; 
+}
+
+/* Si tuvieras un nav, aquí irían sus estilos, similar a consejos.css */
+nav {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estilos Específicos para Subpáginas --- */
+.header-subpage {
+    background-color: #333; /* Un color diferente para el header de subpáginas */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para el encabezado de subpágina */
+}
+
+.header-subpage h1 {
+    color: white; /* Asegura que el título sea blanco */
+    margin-bottom: 0;
+    font-size: 2.8em; /* Título más grande para la subpágina */
+}
+
+.contenido-subpage {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    padding: 30px;
+    width: 85%; /* Un poco más de ancho para el contenido */
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.contenido-subpage p {
+    margin-bottom: 10px;
+}
+
+/* --- Estilos Adicionales para Secciones de Introducción (como en cuidadodelamoto.html y consejosmotociclista.html) --- */
+
+.seccion-intro-cuidado {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.75); 
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin: 40px auto;
+    max-width: 900px;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.intro-texto h2 {
+    font-size: 2.5em;
+    color: #00b300; 
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.intro-texto p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.imagen-intro {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .seccion-intro-cuidado {
+        flex-direction: row; 
+        text-align: left;
+    }
+    .intro-texto {
+        flex: 1;
+        padding-right: 30px;
+    }
+    .imagen-intro {
+        flex: 1;
+        max-width: 45%; 
+    }
+}
+
+
+/* Estilo para cada "tarjeta" de punto clave */
+.punto-clave-card {
+    background-color: #2a2a2a; 
+    border-left: 5px solid #e50914; /* Borde rojo llamativo */
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.punto-clave-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+.punto-clave-card h3 {
+    color: #ffcc00; 
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Si usas los emojis directamente en el HTML como lo puse en el ejemplo de HTML */
+.punto-clave-card h3::before {
+    font-size: 1.2em; /* Tamaño del emoji/icono */
+}
+
+.punto-clave-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.punto-clave-card ul {
+    list-style: none; /* Quitamos el estilo por defecto */
+    padding-left: 0;
+}
+
+.punto-clave-card ul li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    color: #c0c0c0;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px; 
+}
+
+/* Color para los iconos dentro de las listas (si usas emojis directamente) */
+.punto-clave-card ul li::before {
+    /* Si usas un atributo data-icon para iconos, sería content: attr(data-icon); */
+    /* Para los checks de lista, puedes poner el emoji directamente en el HTML o usar un font-awesome */
+    color: #00ccff; /* Azul brillante para los checks */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 2px;
+}
+
+.punto-clave-card .card-content {
+    display: flex;
+    align-items: flex-start; 
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.punto-clave-card .card-imagen {
+    width: 150px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0; 
+}
+
+@media (max-width: 600px) {
+    .punto-clave-card .card-content {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+    }
+    .punto-clave-card .card-imagen {
+        width: 100%;
+        max-width: 250px; 
+        height: 150px;
+        margin-bottom: 15px;
+    }
+    .seccion-intro-cuidado {
+        padding: 20px;
+    }
+    .intro-texto h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Estilo para la sección de conclusión */
+.seccion-conclusion {
+    background-color: #1a1a1a; 
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.seccion-conclusion h2 {
+    color: #e50914; 
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.seccion-conclusion p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.cita-destacada {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #00ccff; 
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 5px solid #00ccff;
+    background-color: rgba(0, 204, 255, 0.05);
+    border-radius: 5px;
+}
+
+/* --- Botones --- */
+.volver-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.boton-volver {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #b2060f;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4); /* Sombra para el footer */
+}
+
+.footer-estatico {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    user-select: none;
+}

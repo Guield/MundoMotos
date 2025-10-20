@@ -1,0 +1,162 @@
+/* --- Fondo General Más Oscuro --- */
+body {
+    background-color: #0d0d0d; /* Negro intenso */
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header Subpágina --- */
+.header-subpage {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.header-subpage h1 {
+    color: white;
+    margin-bottom: 0;
+    font-size: 2.8em;
+}
+
+/* --- Sección de Introducción --- */
+.seccion-intro-cuidado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin: 40px auto;
+    max-width: 900px;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.intro-texto h2 {
+    font-size: 2.5em;
+    color: #00b300;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.intro-texto p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* --- Tarjetas de Consejos --- */
+.punto-clave-card {
+    background-color: #2a2a2a;
+    border-left: 5px solid #e50914;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.punto-clave-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.punto-clave-card h3 {
+    color: #ffcc00;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.punto-clave-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.punto-clave-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.punto-clave-card ul li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    color: #c0c0c0;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* --- Botón Volver Mejorado --- */
+.volver-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.boton-volver {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff4500, #e50914);
+    border: 2px solid #ff4500;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+    background: linear-gradient(135deg, #e50914, #ff6347);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    color: #fff;
+}
+
+/* --- Conclusión --- */
+.seccion-conclusion {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.seccion-conclusion h2 {
+    color: #e50914;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.seccion-conclusion p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.cita-destacada {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #00ccff;
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 5px solid #00ccff;
+    background-color: rgba(0,204,255,0.05);
+    border-radius: 5px;
+}
+

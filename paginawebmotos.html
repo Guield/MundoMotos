@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundo Motos</title>
+  <style>
+    /* Estilos generales del body y elementos básicos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif; /* Mantenemos Arial por compatibilidad con tu código */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Usamos la fuente que sugeriste */
+      background-image: url("https://images.unsplash.com/photo-1558979101-7649514781d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); /* Tu URL de fondo de moto */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-color: #1e1e1e; /* Color de respaldo para el fondo */
+      color: #f5f5f5; /* Color de texto general para contraste con el fondo */
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #e50914;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Estilos de la navegación (Nav) */
+    nav {
+      background-color: #000000;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contenedor principal de la página */
+    .contenedor {
+      width: 80%;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Estilos de las secciones de contenido (Misión, Visión, etc.) */
+    .seccion {
+      margin: 20px 0;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente para legibilidad */
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      color: #000000; /* Asegura que el texto sea negro dentro de estas secciones */
+    }
+
+    /* Títulos dentro de las secciones */
+    h2 {
+      color: #e50914;
+      margin-bottom: 20px;
+    }
+
+    /* Galería (si la usas) */
+    .galeria {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .galeria img {
+      width: 250px;
+      height: 150px;
+      margin: 10px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Tablas (si las usas) */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 2px solid #555;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #222;
+      color: white;
+    }
+
+    /* Formularios (si los usas) */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea, button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #222;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    /* Pie de página (Footer) */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .footer-estatico {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      user-select: none;
+    }
+
+    /* --- Nuevos Estilos Integrados --- */
+
+    /* Sección con imagen de fondo grande */
+    .seccion-fondo {
+      position: relative;
+      background-image: url("https://wallpapers.com/images/hd/yamaha-yzf-4k-bike-4ex5oityodxw1tdv.jpg"); /* La URL que te funcionó */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+      height: 400px; /* Altura de la sección */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+      overflow: hidden; /* Evita desbordamientos si el contenido es grande */
+      border-radius: 12px; /* Añadido para esquinas redondeadas */
+      padding: 60px 30px; /* Añadido para espacio interno */
+    }
+
+    /* Capa oscura sobre la imagen de fondo */
+    .seccion-fondo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+      z-index: 0;
+    }
+
+    /* Título dentro de la sección de fondo */
+    .seccion-fondo h1 {
+      position: relative;
+      z-index: 1; /* Para que el texto esté por encima de la capa oscura */
+      font-size: 4em; /* Tamaño más grande para un título destacado */
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor lectura */
+    }
+
+    /* Contenedor de los cuadros */
+    .cuadro-contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semitransparente */
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    /* Estilo de cada cuadro individual */
+    .cuadro {
+      background-color: #1e1e1e; /* Fondo oscuro para los cuadros */
+      border-radius: 12px;
+      overflow: hidden;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+      text-align: center;
+      color: #f5f5f5; /* Texto claro dentro de los cuadros */
+      padding-bottom: 20px; /* Espacio para el botón */
+    }
+
+    .cuadro:hover {
+      transform: scale(1.05);
+    }
+
+    .cuadro img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0; /* Anulamos el border-radius general para img aquí */
+      margin-top: 0; /* Anulamos el margin-top general para img aquí */
+    }
+
+    .cuadro h3 {
+      color: #e50914;
+      font-size: 1.5em; /* Tamaño de fuente más apropiado */
+      margin: 15px 15px 10px 15px; /* Ajuste de margen */
+    }
+
+    /* Botón dentro de los cuadros */
+    .boton-cuadro {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background-color: #e50914;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-cuadro:hover {
+      background-color: #b2060f;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mundo Motos</h1>
+    <p>Pasión Sobre Ruedas</p>
+  </header>
+
+  <nav>
+    <a href="novedades.html" class="botton-redirection">Novedades</a>
+    <a href="modelos.html" class="botton-redirection">Modelos</a>
+    <a href="consejos.html" class="botton-redirection">Consejos</a>
+    <a href="contacto.html" class="botton-redirection">Contacto</a>
+    <a href="moto.html" class="botton-redirection">Muevelo</a>
+  </nav>
+
+  <div class="contenedor">
+
+    <section class="seccion-fondo">
+      <h1>¡Explora el Mundo de las Motos!</h1>
+    </section>
+
+    <section class="seccion">
+      <h2>Bienvenido a Mundo Motos</h2>
+      <p>
+        El sitio donde encontrarás todo lo que necesitas saber sobre motocicletas. Aquí te ofrecemos información actualizada sobre modelos, marcas, características, novedades del mercado y consejos útiles para los amantes de las dos ruedas.
+      </p>
+    </section>
+
+    
+
+    <section class="seccion">
+      <h2>Misión</h2>
+      <p>
+        En <strong>Mundo Motos</strong>, nuestra misión es proporcionar un espacio digital confiable, atractivo y actualizado donde los entusiastas de las motocicletas puedan acceder a información relevante, clara y de calidad sobre el mundo del motociclismo. Buscamos ser un recurso integral que abarque desde las últimas novedades del mercado, modelos destacados, consejos prácticos y noticias del sector, hasta contenido educativo que fomente una conducción responsable, segura y consciente.
+      </p>
+      <p>
+        Nos esforzamos por construir una comunidad informada que comparta la pasión por las motos, promoviendo el respeto, la innovación y la cultura motera. A través de un diseño accesible y moderno, Mundo Motos pretende acercar el conocimiento a todos, tanto a los nuevos entusiastas como a los motociclistas experimentados, creando así un espacio de referencia útil y comprometido con la excelencia informativa.
+      </p>
+    </section>
+
+    <section class="seccion">
+      <h2>Visión</h2>
+      <p>
+        En <strong>Mundo Motos</strong>, visualizamos un futuro donde nuestra plataforma se consolide como el principal sitio informativo en el mundo hispanohablante para todo lo relacionado con motocicletas. Aspiramos a ser reconocidos por la calidad, objetividad y profundidad de nuestro contenido, así como por el compromiso con nuestros lectores, brindando siempre información relevante, atractiva y en constante evolución.
+      </p>
+      <p>
+        Queremos ser un puente entre las marcas, las innovaciones tecnológicas y la comunidad de motociclistas, difundiendo valores como la pasión por las dos ruedas, la seguridad vial, el respeto por las normas de tránsito y la conciencia ambiental. Nuestra visión es ser un referente confiable y actualizado, capaz de adaptarse a los cambios del mercado y a las necesidades de nuestros usuarios, fomentando una experiencia digital enriquecedora y educativa.
+      </p>
+    </section>
+
+    <footer>
+      <div class="footer-estatico">
+        <span class="izquierda">canizalez ramirez hernandez cruz aquino</span>
+        <span class="derecha">2025 mundo motos - página oficial</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+

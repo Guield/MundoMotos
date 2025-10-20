@@ -1,0 +1,246 @@
+* { /* ¡CORREGIDO: Faltaba el selector universal aquí! */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background-image: url("https://images.unsplash.com/photo-1558979101-7649514781d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #1e1e1e; /* Color de respaldo para el fondo */
+    color: #f5f5f5; /* Color de texto general para contraste con el fondo */
+    margin: 0;
+    padding: 0;
+}
+
+header { /* Aquí es .header en tu HTML, lo he cambiado en el CSS para que coincida */
+    background-color: #e50914;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Agregamos una regla específica para el h1 dentro del header para asegurar el color */
+header h1 {
+    color: white; /* Aseguramos que el H1 dentro de header sea blanco */
+    margin: 0; /* Para evitar espacios no deseados */
+    padding: 0; /* Para evitar espacios no deseados */
+    font-size: 2.5em; /* Ajusta este tamaño si quieres que sea más grande o más pequeño */
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Opcional: para que resalte más */
+}
+
+
+nav {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- Contenedor Principal (si lo usas) --- */
+.contenedor {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* --- Secciones de Contenido (para texto normal con fondo blanco) --- */
+.seccion {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Texto negro para legibilidad sobre fondo claro */
+}
+
+/* --- Títulos generales --- */
+h1 { /* Este es un estilo general para h1, no para h1 dentro de seccion-fondo */
+    color: #e50914; /* Este color es el que estaba causando que tu h1 del header cambiara si no estaba sobreescrito */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* --- Estilo general para imágenes (ajusta si es necesario para específicos) --- */
+img { 
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Esto afecta a todas las img, cuidado si no quieres esto en algunos casos */
+    margin-top: 20px; /* Este margen puede no ser deseable en todas las imágenes */
+}
+
+/* --- Sección con Fondo de Imagen Grande (como el encabezado visual) --- */
+.seccion-fondo {
+    position: relative;
+    background-image: url("https://wallpapers.com/images/hd/yamaha-yzf-4k-bike-4ex5oityodxw1tdv.jpg"); /* La URL de Yamaha que te funcionó */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px; /* Altura de la sección */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 60px 30px;
+}
+
+.seccion-fondo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+    z-index: 0;
+}
+
+.seccion-fondo h1 { /* Estilo para el h1 dentro de seccion-fondo, ¡lo he hecho más grande! */
+    position: relative;
+    z-index: 1;
+    font-size: 3.5em; /* Tamaño de fuente para el título principal de la sección */
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* --- Contenedor de Cuadros (para las opciones de consejos) --- */
+.cuadro-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    /* Un fondo para el contenedor de cuadros para que se vea bien sobre el body image */
+    background-color: rgba(255, 255, 255, 0.95); 
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Espacio debajo de los cuadros */
+    width: 80%; /* Para centrarlo y darle ancho como .contenedor */
+    margin-left: auto; /* Para centrar */
+    margin-right: auto; /* Para centrar */
+}
+
+.cuadro {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: #f5f5f5;
+    padding-bottom: 20px;
+}
+
+.cuadro:hover {
+    transform: scale(1.05);
+}
+
+.cuadro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0; /* Anula el border-radius general para las img de los cuadros */
+    margin-top: 0; /* Anula el margin-top general para las img de los cuadros */
+}
+
+.cuadro h3 {
+    color: #e50914;
+    font-size: 1.5em;
+    margin: 15px 15px 10px 15px;
+}
+
+.cuadro p { /* Estilo para el texto dentro de los cuadros */
+    font-size: 0.95em;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+/* --- Botones Generales --- */
+.boton-cuadro {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-cuadro:hover {
+    background-color: #b2060f;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.footer-estatico {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    user-select: none;
+}
+
+/* --- Nuevo estilo para el botón de volver --- */
+.volver-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.boton-volver {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #b2060f;
+}
