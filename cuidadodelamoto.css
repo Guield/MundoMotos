@@ -1,10 +1,53 @@
-/* --- Fondo General Más Oscuro --- */
-body {
-    background-color: #0d0d0d; /* Negro intenso */
-    color: #f0f0f0;
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* --- Fondo General Más Oscuro --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1558979101-7649514781d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #1e1e1e; /* Color de respaldo para el fondo */
+    color: #f5f5f5; /* Color de texto general para contraste con el fondo */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e50914;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5em; 
+}
+
+/* Si tuvieras un nav, aquí irían sus estilos, similar a consejos.css */
+nav {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 /* --- Header Subpágina --- */
